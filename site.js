@@ -3,6 +3,11 @@ const products = document.querySelectorAll('.product');
 const buttons = document.querySelectorAll('.selection-button');
 const form = document.querySelector('.contact-form');
 
+window.addEventListener('load', () => {
+    const loader = document.getElementById('loader');
+    loader.style.display = 'none';
+});
+
 products.forEach(product => {
     if (!product.classList.contains("pillow")) {
         product.classList.add("hidden");
