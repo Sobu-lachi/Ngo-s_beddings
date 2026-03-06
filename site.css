@@ -9,7 +9,8 @@
 }
 
 :root {
-    --primary: #ffebcd;
+    --primary: #fbe6a9;
+    --other-primary: #f2af17;
     --dark: #222;
     --light-gray: #f4f4f4;
     --text-muted: #666;
@@ -52,11 +53,22 @@ body{
 
 /* Header Section */
 .hero-section{
-    background-color: var(--primary);
+    /* background-color: var(--primary); */
     height: 80vh;
     padding: 15px 30px;
     text-align: center;
     position: relative;
+    background:var(--primary) url("images/herosectionimg.png") no-repeat center center / cover ; /*Last center could be cover*/
+}
+
+.hero-section::before{
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    /* background: rgba(255, 217, 0, 0.2); */
+    /* background: rgba(31, 28, 10, 0.1); */
+    z-index: 1;
 }
 
 .nav-section{
@@ -85,7 +97,9 @@ body{
 
 .nav-section{
     display: flex;
+    position: relative;
     gap: 80px;
+    z-index: 2;
     /* position: fixed; */
 }
 
@@ -101,6 +115,7 @@ body{
     font-size: 60px;
     transform:translate(-50%, -50%);
     cursor: default;
+    z-index: 2;
 }
 
 /* About Section */
@@ -135,7 +150,7 @@ body{
 .mission-image{
     height:100px;
     width: 100px;
-    border: 3px solid var(--primary);
+    border: 3px solid var(--other-primary);
     border-radius: 50%;
     margin-top: 20px;
 }
@@ -151,7 +166,7 @@ body{
 .vision-image{
      height:100px;
     width: 100px;
-    border: 3px solid var(--primary);
+    border: 3px solid var(--other-primary);
     border-radius: 50%;
     margin-top: 20px;
     float: right;
@@ -160,7 +175,7 @@ body{
 /* Featured Section */
 
 .featured-section {
-    background-color:var(--primary);
+    background-color:var(--other-primary);
     padding-top: 6px;
     padding-bottom:20px ;
     overflow: hidden;
@@ -186,7 +201,7 @@ body{
 }
 
 
-/* Producs Section */
+/* Products Section */
 
 .products-section{
     margin: 0;
@@ -211,14 +226,14 @@ body{
 .selection-button{
     border: none;
     background-color: transparent;
-    color: var(--dark-primary);
+    color: var(--other-primary);
     font-size: 50px;
     cursor: pointer;
     /* transition: 0.3s; */
 }
 
 .selection-button:hover{
-    color: var(--dark);
+    color: var(--dark-primary);
 }
 
 .selected{
@@ -241,7 +256,7 @@ body{
     flex-wrap: wrap;
     justify-content: center;
     cursor: pointer;
-    gap: 10px;
+    gap: 15px;
     border: none;
 }
 .product img{
@@ -249,13 +264,8 @@ body{
     height: 300px;
     border-radius: 15px;
     object-fit: cover;
-    margin: 10px;
-}
-
-.product img:hover{
-    transform: scale(1.05);
-    transition: 0.8s;
     border: 3px solid var(--dark-primary);
+
 }
 
 .hidden {
@@ -264,7 +274,7 @@ body{
 
 /* Contact Section */
 .contact-section {
-    background-color: var(--primary);
+    background-color: var(--other-primary);
     padding-top: 60px;
     text-align: center;
     font-family: Arial, sans-serif;
@@ -283,7 +293,7 @@ body{
 }
 
 .contact-header p {
-    color: var(--text-muted);
+    color: var(--dark);
     margin-bottom: 40px;
     font-weight: 600;
 }

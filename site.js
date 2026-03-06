@@ -1,5 +1,6 @@
 const body = document.querySelector('body');
 const products = document.querySelectorAll('.product');
+// const productdata = document.querySelectorAll('.product img')
 const buttons = document.querySelectorAll('.selection-button');
 const form = document.querySelector('.contact-form');
 
@@ -7,6 +8,10 @@ window.addEventListener('load', () => {
     const loader = document.getElementById('loader');
     loader.style.display = 'none';
 });
+
+// products.forEach(product =>{
+//     if()
+// })
 
 products.forEach(product => {
     if (!product.classList.contains("pillow")) {
@@ -19,6 +24,7 @@ products.forEach(product => {
 buttons.forEach(button => {
     button.addEventListener('click', () => {
         const target = button.dataset.target;    
+        // const countOfItems = 0;
         products.forEach(product => {
             if (product.classList.contains(target)) {
                 product.classList.remove("hidden");
