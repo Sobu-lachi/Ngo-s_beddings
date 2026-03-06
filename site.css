@@ -8,6 +8,17 @@
     100% { transform: rotate(360deg); }
 }
 
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -70%); /* Start slightly higher */
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
 :root {
     --primary: #fbe6a9;
     --other-primary: #f2af17;
@@ -34,7 +45,7 @@
 /* Spinner animation */
 .spinner {
     border: 8px solid #f3f3f3; /* Light gray */
-    border-top: 8px solid var(--dark-primary); /* Your brand color */
+    border-top: 8px solid var(--other-primary); /* Your brand color */
     border-radius: 50%;
     width: 60px;
     height: 60px;
@@ -93,7 +104,7 @@ body{
 }
 
 .nav-section a:hover{
-    color: var(--dark-primary);}
+    color: var(--white);}
 
 .nav-section{
     display: flex;
@@ -112,11 +123,14 @@ body{
     position: absolute;
     left: 50%;
     top: 50%;
-    font-size: 60px;
+    font-size: clamp(30px, 8vw, 60px);
+    /* font-size: 60px; */
     transform:translate(-50%, -50%);
     cursor: default;
     z-index: 2;
+    animation: fadeInDown 1.5s ease-out forwards;
 }
+
 
 /* About Section */
 .about-section{
@@ -158,6 +172,7 @@ body{
 .vision-section{
     text-align: left;      
     display: flex;
+    /* flex-direction: row-reverse; */
     gap: 20px;
     position: relative;
     left: 55%;
@@ -321,7 +336,7 @@ body{
     display: block;
     font-size: 14px;
     margin-bottom: 8px;
-    color: var(--text-muted);
+    color: var(--dark);
     margin-left: 15px;
 }
 
@@ -338,8 +353,8 @@ body{
 .submit-btn {
     width: 100%;
     padding: 15px;
-    background-color: var(--primary);
-    color: var(--dark); /* Changed to black for readability on light background */
+    background-color: var(--dark);
+    color: var(--white); /* Changed to black for readability on light background */
     border: none; /* Added a light border for better definition */
     border-radius: 30px;
     font-weight: bold;
@@ -351,7 +366,7 @@ body{
 }
 
 .submit-btn:hover {
-    background-color: #f5d4a1; /* Slightly darker tan for hover effect */
+    background-color: rgb(63, 61, 61); /* Slightly darker tan for hover effect */
 }
 
 .contact-form a {
@@ -365,7 +380,7 @@ body{
     padding: 60px 0;
     margin-top: 20px;
     /* Bottom strip matches your hero/featured sections */
-    border-bottom: 40px solid var(--primary); 
+    border-bottom: 40px solid var(--other-primary); 
 }
 
 .info-bar {
@@ -383,7 +398,7 @@ body{
 .info-icon {
     width: 70px;
     height: 70px;
-    background-color: var(--primary);
+    background-color: var(--other-primary);
     color: var(--dark); /* Changed to black for readability */
     border-radius: 50%;
     display: flex;
